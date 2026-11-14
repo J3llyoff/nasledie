@@ -384,7 +384,7 @@
                     <button onclick="filterMuseum('architecture', this)" class="filter-btn bg-white border border-brand-border px-5 py-2.5 rounded-full hover:bg-gray-50 transition shadow-sm" data-ru="Архитектура" data-en="Architecture">Архитектура</button>
                     <button onclick="filterMuseum('decorative-arts', this)" class="filter-btn bg-white border border-brand-border px-5 py-2.5 rounded-full hover:bg-gray-50 transition shadow-sm" data-ru="Декоративное искусство" data-en="Decorative arts">Декоративное искусство</button>
                 </div>
-                <span class="text-xs uppercase tracking-widest font-medium opacity-50" data-ru="06 Выбранных объектов" data-en="06 Selected objects">06 Выбранных объектов</span>
+                <span class="text-xs uppercase tracking-widest font-medium opacity-50"><span id="cards-count">06</span><span data-ru="&nbsp;Выбранных объектов" data-en="&nbsp;Selected objects">&nbsp;Выбранных объектов</span></span>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-20" id="museum-grid">
@@ -638,7 +638,7 @@
             <div class="bg-brand-yellow rounded-[2rem] p-8 md:p-16 mb-6 shadow-sm">
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
                     <div>
-                        <p class="font-serif text-5xl md:text-6xl mb-3">120</p>
+                        <p class="font-serif text-5xl md:text-6xl mb-3">20-50</p>
                         <p class="text-xs font-bold uppercase tracking-widest opacity-50" data-ru="Гостей за столом" data-en="Seated guests">Гостей за столом</p>
                     </div>
                     <div>
@@ -646,7 +646,7 @@
                         <p class="text-xs font-bold uppercase tracking-widest opacity-50" data-ru="Гостей стоя" data-en="Standing guests">Гостей стоя</p>
                     </div>
                     <div>
-                        <p class="font-serif text-5xl md:text-6xl mb-3">240 м²</p>
+                        <p class="font-serif text-5xl md:text-6xl mb-3">120 м²</p>
                         <p class="text-xs font-bold uppercase tracking-widest opacity-50" data-ru="Площадь зала" data-en="Proposed hall area">Площадь зала</p>
                     </div>
                     <div>
@@ -658,7 +658,7 @@
             <p class="text-sm opacity-50 mb-24 px-4" data-ru="Только предварительные оценки. Вместимость, доступность и технические характеристики требуют оценки при реставрации и проверке безопасности." data-en="Planning assumptions only. Capacity, accessibility and technical specifications require a restoration and safety assessment.">Только предварительные оценки. Вместимость, доступность и технические характеристики требуют оценки при реставрации и проверке безопасности.</p>
 
             <h2 class="font-serif text-fluid-h2 mb-12" data-ru="Ваше событие — по-вашему." data-en="Your occasion, your way.">Ваше событие — по-вашему.</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-24">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-24">
                 <div class="bg-white p-8 rounded-[1.5rem] shadow-sm border border-brand-border/50 hover:shadow-md transition">
                     <span class="text-sm font-bold opacity-30 block mb-6">01</span>
                     <h3 class="font-serif text-2xl mb-3" data-ru="Корпоративные встречи" data-en="Corporate gatherings">Корпоративные встречи</h3>
@@ -673,6 +673,11 @@
                     <span class="text-sm font-bold opacity-30 block mb-6">03</span>
                     <h3 class="font-serif text-2xl mb-3" data-ru="Частные торжества" data-en="Private celebrations">Частные торжества</h3>
                     <p class="text-base opacity-70" data-ru="Годовщины, ужины и семейные торжества." data-en="Anniversaries, dinners and family milestones.">Годовщины, ужины и семейные торжества.</p>
+                </div>
+                <div class="bg-white p-8 rounded-[1.5rem] shadow-sm border border-brand-border/50 hover:shadow-md transition">
+                    <span class="text-sm font-bold opacity-30 block mb-6">04</span>
+                    <h3 class="font-serif text-2xl mb-3" data-ru="Частные торжества" data-en="Private celebrations">Концерты</h3>
+                    <p class="text-base opacity-70" data-ru="Годовщины, ужины и семейные торжества." data-en="Anniversaries, dinners and family milestones.">Публичные выступления и музыкальные представления.</p>
                 </div>
             </div>
 
@@ -946,6 +951,7 @@
 
         // ============== ФИЛЬТРЫ МУЗЕЯ ==============
         function filterMuseum(category, btn) {
+            let cardsCount = 0;
             const buttons = document.querySelectorAll('.filter-btn');
             buttons.forEach(b => {
                 b.className = "filter-btn bg-white border border-brand-border px-5 py-2.5 rounded-full hover:bg-gray-50 transition shadow-sm";
@@ -955,12 +961,15 @@
             const cards = document.querySelectorAll('.museum-card');
             cards.forEach(card => {
                 if (category === 'all' || card.getAttribute('data-category') === category) {
+                    cardsCount++;
                     card.style.display = 'block';
                     card.animate([{ opacity: 0, transform: 'scale(0.95)' }, { opacity: 1, transform: 'scale(1)' }], { duration: 300, easing: 'ease-out' });
                 } else {
                     card.style.display = 'none';
                 }
             });
+            const countSpan = document.getElementById("cards-count");
+            countSpan.innerHTML = cardsCount < 10 ? "0" + cardsCount : cardsCount;
         }
 
         // ============== МОДАЛЬНОЕ ОКНО ==============
