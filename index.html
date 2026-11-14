@@ -244,14 +244,14 @@
                 <span class="font-serif text-xl md:text-2xl tracking-widest uppercase" data-ru="Михайловское" data-en="Mikhailovskoye">Михайловское</span>
             </div>
 
-            <nav class="hidden md:flex items-center gap-10 text-sm font-medium tracking-wide">
+            <nav class="hidden lg:flex items-center gap-10 text-sm font-medium tracking-wide">
                 <a href="#" onclick="navigateTo('home')" class="nav-link active-nav py-2" data-page="home" data-ru="Исследовать" data-en="Discover">Исследовать</a>
                 <a href="#" onclick="navigateTo('museum')" class="nav-link py-2" data-page="museum" data-ru="Музей" data-en="Museum">Музей</a>
                 <a href="#" onclick="navigateTo('hotel')" class="nav-link py-2" data-page="hotel" data-ru="Отель" data-en="Hotel">Отель</a>
                 <a href="#" onclick="navigateTo('events')" class="nav-link py-2" data-page="events" data-ru="События" data-en="Events">События</a>
             </nav>
 
-            <div class="hidden md:flex items-center gap-6 text-sm">
+            <div class="hidden lg:flex items-center gap-6 text-sm">
                 <div class="flex items-center gap-1">
                     <button onclick="setLang('en')" id="lang-en" class="lang-btn px-1 transition">EN</button>
                     <span class="opacity-30">/</span>
@@ -260,7 +260,7 @@
                 <a href="#" class="btn-outline px-6 py-2.5" data-ru="Спланировать визит" data-en="Plan your visit">Спланировать визит</a>
             </div>
 
-            <button class="md:hidden flex flex-col gap-1.5 p-2 z-50" onclick="toggleMobileMenu()">
+            <button class="lg:hidden flex flex-col gap-1.5 p-2 z-50" onclick="toggleMobileMenu()">
                 <span class="w-7 h-[1.5px] bg-brand-text transition-all"></span>
                 <span class="w-7 h-[1.5px] bg-brand-text transition-all"></span>
             </button>
@@ -492,27 +492,57 @@
             <div class="mb-24">
                 <div class="flex justify-between items-end mb-12">
                     <h2 class="font-serif text-fluid-h2" data-ru="Пространство для замедления." data-en="Room to slow down.">Пространство для замедления.</h2>
-                    <span class="text-sm uppercase tracking-widest font-medium hidden md:block" data-ru="Два типа номеров" data-en="Two proposed room types">Два типа номеров</span>
+                    <span class="text-sm uppercase tracking-widest font-medium hidden md:block" data-ru="Два типа номеров" data-en="Two proposed room types">Пять типов номеров</span>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                     <div class="group">
                         <div class="aspect-[4/3] mb-6 overflow-hidden rounded-[1.5rem]">
                             <img src="./src/img/garden-room.png" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700" alt="Garden room">
                         </div>
-                        <h3 class="font-serif text-3xl mb-2" data-ru="Сад-номер" data-en="Garden room">Сад-номер</h3>
+                        <h3 class="font-serif text-3xl mb-2" data-ru="Покои графина Шереметева" data-en="Count Sheremetev’s Chambers">Покои графина Шереметева</h3>
                         <p class="text-sm font-medium tracking-wider uppercase mb-4 opacity-60" data-ru="2 гостя · 24 м² · Двуспальная кровать" data-en="2 guests · 24 m² · Double bed">2 гостя · 24 м² · Двуспальная кровать</p>
-                        <p class="text-lg mb-6 max-w-md" data-ru="Уютный номер с тёплыми текстурами и видом на усадьбу." data-en="A restful room with warm textures and a view of the grounds.">Уютный номер с тёплыми текстурами и видом на усадьбу.</p>
-                        <p class="text-sm opacity-60 mb-8" data-ru="Wi-Fi / Собственная ванная / Завтрак" data-en="Wi-Fi / Private bathroom / Breakfast option">Wi-Fi / Собственная ванная / Завтрак</p>
+                        <p class="text-lg mb-6 max-w-md" data-ru="Уютный номер с тёплыми текстурами и видом на усадьбу." data-en="A cozy room with warm textures and a view of the estate.">Уютный номер с тёплыми текстурами и видом на усадьбу.</p>
+                        <p class="text-sm opacity-60 mb-8" data-ru="Wi-Fi / Собственная ванная / Завтрак" data-en="Wi-Fi / Private bathroom / Breakfast">Wi-Fi / Собственная ванная / Завтрак</p>
                         <a href="#" class="btn-outline inline-flex px-8 py-3 text-sm uppercase tracking-widest" data-ru="Запросить этот номер" data-en="Request this room">Запросить этот номер</a>
                     </div>
                     <div class="group">
                         <div class="aspect-[4/3] mb-6 overflow-hidden rounded-[1.5rem]">
                             <img src="./src/img/manor-suite.png" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700" alt="Manor suite">
                         </div>
-                        <h3 class="font-serif text-3xl mb-2" data-ru="Люкс усадьбы" data-en="Manor suite">Люкс усадьбы</h3>
-                        <p class="text-sm font-medium tracking-wider uppercase mb-4 opacity-60" data-ru="2-3 гостя · 42 м² · Кровать King + диван" data-en="2-3 guests · 42 m² · King bed + sofa">2-3 гостя · 42 м² · Кровать King + диван</p>
-                        <p class="text-lg mb-6 max-w-md" data-ru="Просторное убежище с отдельной гостиной для длительного проживания." data-en="A generous retreat with a separate sitting area for longer stays.">Просторное убежище с отдельной гостиной для длительного проживания.</p>
-                        <p class="text-sm opacity-60 mb-8" data-ru="Wi-Fi / Гостиная зона / Чай и кофе" data-en="Wi-Fi / Lounge area / Tea & coffee">Wi-Fi / Гостиная зона / Чай и кофе</p>
+                        <h3 class="font-serif text-3xl mb-2" data-ru="Резиденция графа Мусина" data-en="Residence of Count Musin">Резиденция графа Мусина</h3>
+                        <p class="text-sm font-medium tracking-wider uppercase mb-4 opacity-60" data-ru="3 гостя · 42 м² · Кровать King + диван" data-en="3 guests · 42 m² · King bed + sofa">3 гостя · 42 м² · Кровать King + диван</p>
+                        <p class="text-lg mb-6 max-w-md" data-ru="Светлый номер с высокими потолками и видом на регулярный парк." data-en="A bright room with high ceilings and a view of a formal park.">Светлый номер с высокими потолками и видом на регулярный парк.</p>
+                        <p class="text-sm opacity-60 mb-8" data-ru="Wi-Fi / Гостиная зона / Чай и кофе" data-en="Wi-Fi / Living area / Tea and coffee">Wi-Fi / Гостиная зона / Чай и кофе</p>
+                        <a href="#" class="btn-outline inline-flex px-8 py-3 text-sm uppercase tracking-widest" data-ru="Запросить этот номер" data-en="Request this room">Запросить этот номер</a>
+                    </div>
+                    <div class="group">
+                        <div class="aspect-[4/3] mb-6 overflow-hidden rounded-[1.5rem]">
+                            <img src="./src/img/garden-room.png" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700" alt="Garden room">
+                        </div>
+                        <h3 class="font-serif text-3xl mb-2" data-ru="Кабинет князя Одоевского" data-en="Prince Odoyevsky’s Study">Кабинет князя Одоевского</h3>
+                        <p class="text-sm font-medium tracking-wider uppercase mb-4 opacity-60" data-ru="1 гость · 18 м² · Односпальная кровать" data-en="1 guest · 18 m² · Single bed">1 гость · 18 м² · Односпальная кровать</p>
+                        <p class="text-lg mb-6 max-w-md" data-ru="Компактный номер для одного гостя с рабочим столом у окна." data-en="A compact room for one guest, featuring a desk by the window.">Компактный номер для одного гостя с рабочим столом у окна.</p>
+                        <p class="text-sm opacity-60 mb-8" data-ru="Wi-Fi / Рабочее место / Завтрак" data-en="Wi-Fi / Workspace / Breakfast">Wi-Fi / Рабочее место / Завтрак</p>
+                        <a href="#" class="btn-outline inline-flex px-8 py-3 text-sm uppercase tracking-widest" data-ru="Запросить этот номер" data-en="Request this room">Запросить этот номер</a>
+                    </div>
+                    <div class="group">
+                        <div class="aspect-[4/3] mb-6 overflow-hidden rounded-[1.5rem]">
+                            <img src="./src/img/garden-room.png" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700" alt="Garden room">
+                        </div>
+                        <h3 class="font-serif text-3xl mb-2" data-ru="Апартаменты Засецких" data-en="The Zasetskys' Apartments">Апартаменты Засецких</h3>
+                        <p class="text-sm font-medium tracking-wider uppercase mb-4 opacity-60" data-ru="2 гостя · 26 м² · Двуспальная кровать + диван" data-en="2 guests · 26 m² · Double bed + sofa">2 гостя · 26 м² · Двуспальная кровать + диван</p>
+                        <p class="text-lg mb-6 max-w-md" data-ru="Номер с мягкой зоной отдыха и видом на пруд." data-en="Room with a cozy seating area and a view of the pond.">Номер с мягкой зоной отдыха и видом на пруд.</p>
+                        <p class="text-sm opacity-60 mb-8" data-ru="Wi-Fi / Зона отдыха / Завтрак" data-en="Wi-Fi / Lounge area / Breakfast">Wi-Fi / Зона отдыха / Завтрак</p>
+                        <a href="#" class="btn-outline inline-flex px-8 py-3 text-sm uppercase tracking-widest" data-ru="Запросить этот номер" data-en="Request this room">Запросить этот номер</a>
+                    </div>
+                    <div class="group">
+                        <div class="aspect-[4/3] mb-6 overflow-hidden rounded-[1.5rem]">
+                            <img src="./src/img/garden-room.png" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700" alt="Garden room">
+                        </div>
+                        <h3 class="font-serif text-3xl mb-2" data-ru="Светлица Кречетниковых" data-en="The Krechetnikovs’ Chamber">Светлица Кречетниковых</h3>
+                        <p class="text-sm font-medium tracking-wider uppercase mb-4 opacity-60" data-ru="3 гостя · 30 м² · Две односпальные кровати + диван" data-en="3 guests · 30 m² · Two single beds + sofa">3 гостя · 30 м² · Две односпальные кровати + диван</p>
+                        <p class="text-lg mb-6 max-w-md" data-ru="Уютный семейный номер с окнами на липовую аллею." data-en="A cozy family room with windows overlooking a linden tree alley.">Уютный семейный номер с окнами на липовую аллею.</p>
+                        <p class="text-sm opacity-60 mb-8" data-ru="Wi-Fi / Семейное размещение / Чай и кофе" data-en="Wi-Fi / Family accommodation / Tea and coffee">Wi-Fi / Семейное размещение / Чай и кофе</p>
                         <a href="#" class="btn-outline inline-flex px-8 py-3 text-sm uppercase tracking-widest" data-ru="Запросить этот номер" data-en="Request this room">Запросить этот номер</a>
                     </div>
                 </div>
@@ -550,7 +580,7 @@
                 </div>
 
                 <div class="w-full lg:w-1/2 flex flex-col justify-center">
-                    <div class="flex p-1 bg-white/30 rounded-full mb-8 w-max">
+                    <div class="flex flex-col md:flex-row p-1 bg-white/30  rounded-3xl md:rounded-full md:w-max mb-4">
                         <button onclick="toggleStayType('short')" id="btn-short" class="stay-btn active px-6 py-2.5 rounded-full text-sm font-medium transition" data-ru="Короткое проживание" data-en="Short stay">Короткое проживание</button>
                         <button onclick="toggleStayType('long')" id="btn-long" class="stay-btn px-6 py-2.5 rounded-full text-sm font-medium transition" data-ru="Длительное / 28+ ночей" data-en="Long stay / 28+ nights">Длительное / 28+ ночей</button>
                     </div>
@@ -636,7 +666,7 @@
             </div>
 
             <div class="bg-brand-yellow rounded-[2rem] p-8 md:p-16 mb-6 shadow-sm">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
                     <div>
                         <p class="font-serif text-5xl md:text-6xl mb-3">20-50</p>
                         <p class="text-xs font-bold uppercase tracking-widest opacity-50" data-ru="Гостей за столом" data-en="Seated guests">Гостей за столом</p>
@@ -738,18 +768,18 @@
     <footer class="bg-brand-text text-brand-bg pt-20 pb-10 px-6 rounded-t-[3rem] mt-12">
         <div class="max-w-[1400px] mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-12 border-b border-brand-bg/10 pb-16 mb-8">
-                <div class="md:col-span-6 flex flex-col justify-between">
+                <div class="md:col-span-12 lg:col-span-6 flex flex-col justify-between">
                     <div>
                         <h2 class="font-serif text-4xl md:text-5xl mb-4 tracking-wider uppercase" data-ru="Михайловское" data-en="Mikhailovskoye">Михайловское</h2>
                         <p class="text-lg opacity-70" data-ru="Будущее для наследия. Место для каждого." data-en="A future for heritage. A place for everyone.">Будущее для наследия. Место для каждого.</p>
                     </div>
                 </div>
-                <div class="md:col-span-3 md:col-start-8 text-sm">
+                <div class="md:col-span-6 lg:col-span-3 text-sm">
                     <span class="text-xs font-bold uppercase tracking-widest opacity-40 block mb-6" data-ru="Найти нас" data-en="Find us">Найти нас</span>
                     <p class="mb-2 font-medium" data-ru="Московская область, Россия" data-en="Moscow region, Russia">Московская область, Россия</p>
                     <p class="opacity-60 leading-relaxed" data-ru="Точный адрес для посещения будет подтверждён" data-en="Exact visitor address to be confirmed">Точный адрес для посещения будет подтверждён</p>
                 </div>
-                <div class="md:col-span-3 text-sm">
+                <div class="md:col-span-6 lg:col-span-3 text-sm">
                     <span class="text-xs font-bold uppercase tracking-widest opacity-40 block mb-6" data-ru="Связаться с нами" data-en="Get in touch">Связаться с нами</span>
                     <p class="mb-2 font-medium" data-ru="Контактные данные скоро появятся" data-en="Contact details coming soon">Контактные данные скоро появятся</p>
                     <p class="opacity-60 leading-relaxed" data-ru="Хакатон форума «Наследие»" data-en="&quot;Heritage&quot; forum hackathon">Хакатон форума «Наследие»</p>
