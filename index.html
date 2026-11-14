@@ -708,15 +708,17 @@
     <!-- JAVASCRIPT -->
     <script>
         // ============== СОСТОЯНИЕ ==============
+
         let currentLang = 'ru';
-        let currentYear = 2027;
-        let currentMonth = 5;
+        const currentDate = new Date();
+        let currentYear = currentDate.getFullYear();
+        let currentMonth = currentDate.getMonth();
         let startDate = null;
         let endDate = null;
         let currentModalObject = null;
 
-        const unavailableDates = ['2027-06-11', '2027-06-18', '2027-06-25', '2027-07-05', '2027-07-15'];
-        const almostFullDates = ['2027-06-04', '2027-06-05', '2027-06-24', '2027-07-01'];
+        const unavailableDates = ['2026-11-11', '2026-11-12', '2026-11-13'];
+        const almostFullDates = ['2026-11-23', '2026-11-25', '2026-11-26', '2026-11-30'];
 
         const monthNames = {
             ru: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
@@ -724,7 +726,7 @@
         };
         const weekdays = {
             ru: ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"],
-            en: ["M", "T", "W", "T", "F", "S", "S"]
+            en: ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"]
         };
 
         // Данные экспонатов (для модального окна)
