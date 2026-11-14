@@ -1195,39 +1195,67 @@
         });
 
 // ===== 3D ТУР (Pannellum) =====
-let tourViewer = null;
-let tourInitialized = false;
-
-// ВАЖНО: Замените этот путь на реальный путь к вашей 360°-панораме
-const panoramaImage = './src/img/museum-360-panorama.jpg';
+// Конфигурация тура
+const tourConfig = {
+    // Глобальные настройки
+    "default": {
+        "firstScene": "hall",
+        "sceneFadeDuration": 1000, // Длительность перехода между сценами (мс)
+        "author": "Mikhailovskoye Estate"
+    },
+    
+    // Настройки сцен
+    "scenes": {
+        
+        // --- Сцена 1: Парадный зал (стартовая) ---
+        "hall": {
+            "title": "Парадный зал",
+            "panorama": "./src/img/museum-360-hall.jpg", // Путь к вашей панораме
+            "hotSpots": [
+                {
+                    "pitch": -5,        // Вертикальный угол (градусы)
+                    "yaw": 45,          // Горизонтальный угол (градусы)
+                    "type": "scene",
+                    "text": "Перейти в галерею",
+                    "sceneId": "gallery" // ID сцены, куда ведёт переход
+                }
+            ]
+        },
+        
+        // --- Сцена 2: Галерея ---
+        "gallery": {
+            "title": "Галерея",
+            "panorama": "./src/img/museum-360-gallery.jpg",
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": -90,
+                    "type": "scene",
+                    "text": "Вернуться в зал",
+                    "sceneId": "hall" // Обратная ссылка
+                },
+                {
+                    "pitch": 10,
+                    "yaw": 120,
+                    "type": "info",
+                    "text": "Экспонат «Речной пейзаж»" // Информационная точка
+                }
+            ]
+        }
+        
+    }
+};
 
 function openTour() {
     const modal = document.getElementById('tour-modal');
     modal.classList.add('active');
-    document.body.style.overflow = 'hidden'; // Блокируем скролл страницы
+    document.body.style.overflow = 'hidden';
 
-    // Инициализируем Pannellum только один раз
     if (!tourInitialized) {
-        tourViewer = pannellum.viewer('panorama-container', {
-            type: 'equirectangular',
-            panorama: panoramaImage,
-            autoLoad: true,
-            showControls: true, // Показываем встроенные элементы управления
-            compass: false,
-            // Пример хотспота (необязательно). Координаты нужно подбирать под вашу панораму.
-            // hotSpots: [
-            //     {
-            //         pitch: 5,
-            //         yaw: 120,
-            //         type: 'info',
-            //         text: 'Экспонат «Речной пейзаж»',
-            //         clickHandlerFunc: function() { alert('Переход к экспонату...'); }
-            //     }
-            // ]
-        });
+        // Инициализируем тур, передавая ему объект конфигурации
+        tourViewer = pannellum.viewer('panorama-container', tourConfig);
         tourInitialized = true;
     } else {
-        // Если тур уже был открыт, просто перезапускаем рендеринг
         tourViewer.resize();
     }
 }
